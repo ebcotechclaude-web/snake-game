@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0b0b17">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div id="menu" class="overlay">
+    <h1>Snake<span> Game</span></h1>
+    <form id="menu-form" autocomplete="off">
+      <input id="nick" type="text" maxlength="16" placeholder="Nickname" spellcheck="false">
+      <button id="play" type="submit">Play</button>
+    </form>
+    <button id="open-custom" type="button" class="secondary">&#127912; Customize your snake</button>
+    <div class="mode-switch">
+      <span id="lbl-off" class="lbl active">Offline</span>
+      <label class="switch">
+        <input id="mode-switch" type="checkbox" role="switch" aria-label="Online mode">
+        <span class="slider"></span>
+      </label>
+      <span id="lbl-on" class="lbl">Online</span>
+    </div>
+    <p id="mode-hint" class="mode-hint"></p>
+    <p id="menu-msg" class="msg"></p>
+    <p class="hint touch-only">Left thumb: joystick to steer &middot; Hold the screen with another finger to boost</p>
+    <p class="hint desktop-only">Mouse to steer &middot; Hold left click or <b>Space</b> to boost &middot; Arrow keys / A D also steer</p>
+  </div>
+
+  <div id="custom" class="overlay hidden">
+    <h2>Customize</h2>
+    <canvas id="skin-preview" width="360" height="200"></canvas>
+    <div id="custom-tabs"></div>
+    <div id="custom-grid"></div>
+    <div class="row">
+      <button id="custom-random" type="button" class="secondary">Random</button>
+      <button id="custom-done" type="button">Done</button>
+    </div>
+  </div>
+
+  <div id="dead" class="overlay hidden">
+    <h2 id="dead-title">You died</h2>
+    <p id="dead-score"></p>
+    <button id="again">Play again</button>
+    <button id="to-menu" class="secondary">Menu</button>
+  </div>
+
+  <div id="wipe"></div>
+
+  <script src="sim.js"></script>
+  <script src="wipe.js"></script>
+  <script src="skin-art.js"></script>
+  <script src="customize.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

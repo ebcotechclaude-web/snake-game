@@ -1,0 +1,17 @@
+{
+  "name": "snake-game",
+  "version": "1.0.0",
+  "description": "Snake Game: a slither.io-style game with NPC snakes, local and online modes",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "ws": "^8.22.0"
+  }
+}
